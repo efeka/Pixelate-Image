@@ -1,0 +1,1 @@
+Takes an image from the user, saves it in the same directory as the program runs in, after pixelating it with a rate of the users choosing.
