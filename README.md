@@ -1,1 +1,2 @@
 Takes an image from the user, saves it in the same directory as the program runs in, after pixelating it with a rate of the users choosing.
+If the resolution of the original image is too high, the programm attempts to lower it, but it can sometimes fail and the new image may be missing some parts.
