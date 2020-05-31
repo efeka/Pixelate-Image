@@ -73,7 +73,7 @@ public class GenerateImage extends Canvas {
 	}
 	
 	//splits the image into bigger pixels with a size of blockSize
-	//top left corner of each big pixel is painted with the averaged rgb of each pixel inside of said big pixel
+	//in each big pixel, finds the sum of each pixel's rgb and paints the top left pixel with the average rgb
 	private void pixelise() {
 		for (int x = 0; x < w; x += blockSize) {
 			for (int y = 0; y < h; y += blockSize) {
@@ -100,8 +100,7 @@ public class GenerateImage extends Canvas {
 		}
 	}
 	
-	//doesnt paint every single pixel, instead paints a big pixel of size blockSize
-	//from each big pixels top left corner
+	//looks at the top left corner of each big pixel, paints a rectangle with a size of blockSize with that pixels color
 	public void paint(Graphics g) {
 
 		for (int i = 0; i < h; i += blockSize) {
@@ -119,8 +118,8 @@ public class GenerateImage extends Canvas {
 	}
 	
 	//saves the resulting image inside the same directory as the program runs in
-	//user decides on the name and extension of the file
-	//still saves the image even if some of it is missing, gives a pop up warning
+	//user decides on the name and extension of this file
+	//still saves the image even if some of it is missing after giving a pop up warning
 	public void saveResult(String fileName, String extention) {
 		BufferedImage result = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		int warningCount = 0;
